@@ -9,11 +9,11 @@ See below and LICENSE file for licensing details.
 
 My organization has a very homogenous environment consisting of several identical deployments. We deploy machines with a basic manifest, like "_cg_ru" ("Client Group: Regular Users"). This works wonderfully, until computer three in room 28 needs a special piece of software.
 
-Munki Enroll allows us this flexibility. A computer is deployed with a generic manifest, and Munki Enroll changes the manifest to a specific manifest. The new specific manifest contains the generic manifest as an included_manifests key, allowing us to easily target the whole lab and each individual computer.
+Munki Enroll allows us this flexibility. A computer is deployed with a generic manifest, and Munki Enroll changes the manifest to a new manifest unique to that computer . The new unique manifest contains the generic manifest (and others if required) as included_manifests keys, allowing us to easily target the whole lab and each individual computer.
 
 ### Wait, Doesn't Munki Do This Already?
 
-Munki can target systems based on hostnames or serial numbers. However, each manifest must be created by hand. Munki Enroll allows us to create specific manifests automatically, and to allow them to contain a more generic manifest for large-scale software management.
+Munki can target systems based on hostnames or serial numbers. However, each manifest must be created by hand. Munki Enroll allows us to create unique manifests automatically, and to allow them to contain more generic included_manifests for large-scale software management.
 
 ## Installation
 
